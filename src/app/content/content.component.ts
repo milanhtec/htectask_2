@@ -1,6 +1,7 @@
+import {Http} from '@angular/http';
+
 import { Component, OnInit, Input } from '@angular/core';
 
-//import {Http} from '@angular/http';
 
 import { FilterPipe } from '../filter.pipe';
 
@@ -12,14 +13,12 @@ import { FilterPipe } from '../filter.pipe';
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent implements OnInit {
+  Coll: JsonData.CarsCollection;
 
-
-  data;
-
-  //constructor(private http:Http) {
-      //this.http.get('data/data.json')
-               //.subscribe(res => this.data = res.json());
-  //}
+  constructor(private http:Http) {
+      this.http.get('http://www.json-generator.com/api/json/get/bQJcQFdAGG?indent=4')
+               .subscribe(res => this.Coll = res.json());
+  }
 
 
     headerTitle = "Welcome 1234567";
@@ -44,9 +43,23 @@ ninjas = [
     //     belt: "Green"
     // };
 
-  constructor() { }
 
   ngOnInit() {
   }
 
+}
+
+declare module JsonData {
+
+    export interface Car {
+        image2: string;
+        speed: number;
+        description: string;
+        name: string;
+        id: number;
+    }
+
+    export interface CarsCollection {
+        data: Car[];
+    }
 }

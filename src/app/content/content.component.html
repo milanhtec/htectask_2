@@ -30,14 +30,16 @@
 <p>{{ninja.name}}</p>
 <p>{{ninja.belt}}</p> -->
 
-<label for="">Filter ninjas by name: </label>
-<input  [(ngModel)]="term" [ngModelOptions]="{standalone: true}" placeholder="Search">
+<!-- <label for="">Filter ninjas by name: </label>
+<input  [(ngModel)]="term" [ngModelOptions]="{standalone: true}" placeholder="Search"> -->
 
 <ul>
-    <li *ngFor="let ninja of ninjas | filter:term">
+    <li *ngFor="let d of Coll.data">
         <div>
-            <p>{{ninja.name}}</p>
-            <span [ngStyle]="{background: ninja.belt}">{{ninja.belt}} belt</span>
+            <!-- <p>{{ninja.name}}</p>
+            <span [ngStyle]="{background: ninja.belt}">{{ninja.belt}} belt</span> -->
+            <p>{{d.name}}</p>
+            <img src="{{d.image}}" alt="">
         </div>
     </li>
 </ul>
