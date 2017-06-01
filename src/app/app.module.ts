@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+
+import { HttpModule } from '@angular/http';
+
 import { AppComponent } from './app.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
@@ -11,12 +14,13 @@ import { FilterPipe } from './filter.pipe';
     AppComponent,
     HeaderComponent,
     ContentComponent,
-    FilterPipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
     FlexLayoutModule,
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
