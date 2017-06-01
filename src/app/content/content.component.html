@@ -1,3 +1,43 @@
+<h1>{{headerTitle}}</h1>
 <p>
   content works! dddddd
 </p>
+
+<ng-content></ng-content>
+
+
+<!-- property binding -->
+<input value="{{inputName}}" />
+<input required="{{myBoolean}}" />
+
+<button (click)="alertMe('testiramo za sada')">click me</button>
+
+<!-- two way data binding -->
+<!-- <label for="">Name:</label>
+<input [(ngModel)]="ninja.name" />
+<label for="">Belt:</label>
+<input [(ngModel)]="belt.name" />
+
+<p>{{ninja.name}}</p>
+<p>{{ninja.belt}}</p>
+
+<input [ngModel]="username">
+
+<p>Hello {{username}}!</p> -->
+
+
+<!-- <p>{{headerTitle}}</p>
+<p>{{ninja.name}}</p>
+<p>{{ninja.belt}}</p> -->
+
+<label for="">Filter ninjas by name: </label>
+<input  [(ngModel)]="term" [ngModelOptions]="{standalone: true}" placeholder="Search">
+
+<ul>
+    <li *ngFor="let ninja of ninjas | filter:term">
+        <div>
+            <p>{{ninja.name}}</p>
+            <span [ngStyle]="{background: ninja.belt}">{{ninja.belt}} belt</span>
+        </div>
+    </li>
+</ul>
