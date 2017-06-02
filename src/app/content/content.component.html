@@ -1,45 +1,17 @@
-<h1>{{headerTitle}}</h1>
-<p>
-  content works! dddddd
-</p>
-
-<ng-content></ng-content>
-
-
-<!-- property binding -->
-<input value="{{inputName}}" />
-<input required="{{myBoolean}}" />
-
 <button (click)="alertMe('testiramo za sada')">click me</button>
 
-<!-- two way data binding -->
-<!-- <label for="">Name:</label>
-<input [(ngModel)]="ninja.name" />
-<label for="">Belt:</label>
-<input [(ngModel)]="belt.name" />
+<label for="">Filter ninjas by name: </label>
+<input  [(ngModel)]="term" [ngModelOptions]="{standalone: true}" placeholder="Search">
 
-<p>{{ninja.name}}</p>
-<p>{{ninja.belt}}</p>
-
-<input [ngModel]="username">
-
-<p>Hello {{username}}!</p> -->
-
-
-<!-- <p>{{headerTitle}}</p>
-<p>{{ninja.name}}</p>
-<p>{{ninja.belt}}</p> -->
-
-<!-- <label for="">Filter ninjas by name: </label>
-<input  [(ngModel)]="term" [ngModelOptions]="{standalone: true}" placeholder="Search"> -->
-
-<ul>
-    <li *ngFor="let d of Coll.data">
-        <div>
-            <!-- <p>{{ninja.name}}</p>
-            <span [ngStyle]="{background: ninja.belt}">{{ninja.belt}} belt</span> -->
-            <p>{{d.name}}</p>
-            <img src="{{d.image}}" alt="">
+<ul fxLayout.md="column" fxLayout.sm="column" fxLayout.xm="column">
+    <li *ngFor="let d of Coll.data | filter:term" fxLayout="row" fxLayout.sm="column" fxFlex="100">
+        <div class="box" fxFlex="100" fxFlex.md>
+            <div fxFlex.md="100">
+                <h3>{{d.name}}</h3>
+                <img src="{{d.image}}" alt="">
+                <p fxLayout="end end">{{d.description}}</p>
+                <span>{{d.speed}}</span>
+            </div>
         </div>
     </li>
 </ul>
