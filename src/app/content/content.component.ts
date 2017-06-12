@@ -11,7 +11,9 @@ import { FilterPipe } from '../filter.pipe';
 export class ContentComponent implements OnInit {
     Coll: JsonData.CarsCollection;
 
-    constructor(private http:Http) {
+    @Input() ninja;
+
+    constructor(private http: Http) {
       this.http.get('http://www.json-generator.com/api/json/get/bQJcQFdAGG?indent=4')
                .subscribe(res => this.Coll = res.json());
     }
@@ -20,7 +22,6 @@ export class ContentComponent implements OnInit {
         alert(val);
     }
 
-    @Input() ninja;
 
 
     // ninjas = [

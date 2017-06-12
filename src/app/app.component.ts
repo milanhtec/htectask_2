@@ -12,8 +12,8 @@ export class AppComponent {
   title = 'working...';
 
   ninja = {
-      name: "Vanja",
-      belt: "Red"
+      name: 'Vanja',
+      belt: 'Red'
   };
 
 }
