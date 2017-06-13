@@ -13,8 +13,8 @@ export class AppComponent {
   filterValue = '';
 
   ninja = {
-      name: "Vanja",
-      belt: "Red"
+      name: 'Vanja',
+      belt: 'Red'
   };
 
   updateValue(value) {

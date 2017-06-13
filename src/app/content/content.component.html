@@ -3,7 +3,7 @@
 <!--<label for="">Filter ninjas by name: </label>
 <input  [(ngModel)]="term" [ngModelOptions]="{standalone: true}" placeholder="Search">-->
 
-<h3>{{valueToSearch}}</h3>
+<!--<h3>{{valueToSearch}}</h3>-->
 <ul fxLayout.md="column" fxLayout.sm="column" fxLayout.xm="column">
     <li *ngFor="let d of Coll | filter:valueToSearch" fxLayout="row" fxLayout.sm="column" fxFlex="100">
         <div class="box" fxFlex="100" fxFlex.md>

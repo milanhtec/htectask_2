@@ -7,9 +7,9 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  @Output() searchValueUpdate = new EventEmitter<String>();
   constructor() { }
 
-  @Output() searchValueUpdate = new EventEmitter<String>();
 
   ngOnInit() {
   }
