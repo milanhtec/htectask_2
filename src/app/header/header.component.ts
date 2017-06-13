@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +9,13 @@ export class HeaderComponent implements OnInit {
 
   constructor() { }
 
+  @Output() searchValueUpdate = new EventEmitter<String>();
+
   ngOnInit() {
   }
 
+  updateSearchValue(value: string) {
+    // console.log('This is the value', value);
+    this.searchValueUpdate.emit(value);
+  }
 }

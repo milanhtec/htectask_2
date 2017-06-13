@@ -6,6 +6,9 @@
     </div>
     <div fxLayout="row" fxLayoutAlign="space-between center" style="background: #fff;">
       <i fxFlex="15" fxLayoutAlign="center center" class="material-icons">search</i>
-      <input fxFlex="85" [(ngModel)]="term" [ngModelOptions]="{standalone: true}" placeholder="Search">
+      <!--<input fxFlex="85" [(ngModel)]="term" [ngModelOptions]="{standalone: true}" placeholder="Search">-->
+      <input 
+        (keyup)="updateSearchValue(myInput.value)" #myInput
+        fxFlex="85" placeholder="Search">
     </div>
 </header>

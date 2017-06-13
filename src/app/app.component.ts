@@ -10,10 +10,15 @@ import { ContentComponent } from './content/content.component';
 })
 export class AppComponent {
   title = 'working...';
+  filterValue = '';
 
   ninja = {
       name: "Vanja",
       belt: "Red"
   };
 
+  updateValue(value) {
+    this.filterValue = value;
+    // console.log(this.filterValue, 'is updated!');
+  }
 }

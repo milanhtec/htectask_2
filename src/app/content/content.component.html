@@ -1,10 +1,11 @@
-<button (click)="alertMe('testiramo za sada')">click me</button>
+<!--<button (click)="alertMe('testiramo za sada')">click me</button>-->
 
-<label for="">Filter ninjas by name: </label>
-<input  [(ngModel)]="term" [ngModelOptions]="{standalone: true}" placeholder="Search">
+<!--<label for="">Filter ninjas by name: </label>
+<input  [(ngModel)]="term" [ngModelOptions]="{standalone: true}" placeholder="Search">-->
 
+<h3>{{valueToSearch}}</h3>
 <ul fxLayout.md="column" fxLayout.sm="column" fxLayout.xm="column">
-    <li *ngFor="let d of Coll.data | filter:term" fxLayout="row" fxLayout.sm="column" fxFlex="100">
+    <li *ngFor="let d of Coll | filter:valueToSearch" fxLayout="row" fxLayout.sm="column" fxFlex="100">
         <div class="box" fxFlex="100" fxFlex.md>
             <div fxFlex.md="100">
                 <h3>{{d.name}}</h3>

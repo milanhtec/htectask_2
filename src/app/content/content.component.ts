@@ -12,8 +12,12 @@ export class ContentComponent implements OnInit {
     Coll: JsonData.CarsCollection;
 
     constructor(private http:Http) {
-      this.http.get('http://www.json-generator.com/api/json/get/bQJcQFdAGG?indent=4')
-               .subscribe(res => this.Coll = res.json());
+      this.http
+        .get('http://www.json-generator.com/api/json/get/bQJcQFdAGG?indent=4')
+        .subscribe(res => {
+            // console.log(res.json());
+            this.Coll = res.json().data
+        });
     }
 
     alertMe(val) {
@@ -22,6 +26,7 @@ export class ContentComponent implements OnInit {
 
     @Input() ninja;
 
+    @Input() valueToSearch: any;
 
     // ninjas = [
     //     {name: "Milan", belt: "orange"},
@@ -37,7 +42,6 @@ export class ContentComponent implements OnInit {
 
     ngOnInit() {
     }
-
 }
 
 declare module JsonData {
