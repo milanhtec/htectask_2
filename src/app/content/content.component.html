@@ -16,7 +16,6 @@
     </li>
 </ul>-->
 
-
 <div class="box-container">
     <div class="box-container_wrapper">
         <div class="box-content" *ngFor="let d of Coll.data | filter:term">
@@ -27,11 +26,9 @@
                 </div>
                 <div class="back">
                     <p>{{d.description}}</p>
-                    <span>{{d.speed}}</span>
+                    <span>{{d.speed}} km/h</span>
                 </div>
             </div>      
-
-
         </div>
     </div>
 </div>

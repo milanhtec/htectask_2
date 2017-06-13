@@ -22,8 +22,9 @@ html {
 }
 
 .box-content {
-    width: 50%;
+    width: calc(50% - 10px);
     float: left;
+    margin: 5px;
 }
 
 img {
@@ -58,12 +59,12 @@ img {
 
 .back p {
     font-family: sans-serif;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .back span {
     font-family: sans-serif;
-    font-size: 25px;
+    font-size: 20px;
     color: pink;
 }
 
